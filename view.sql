@@ -9,7 +9,7 @@ SELECT
     m.id_membre,
     m.nom AS nom_membre,
     m.email,
-    m.ville
+    m.ville 
 FROM emprunt_objet o
 JOIN emprunt_emprunt e ON o.id_objet = e.id_objet
 JOIN emprunt_categorie_objet c ON o.id_categorie = c.id_categorie
@@ -22,7 +22,6 @@ join emprunt_categorie_objet on
 create or replace v_objet_image as select empo.* , empio.id_image , empio.nom_image 
  from emprunt_objet empo join emprunt_images_objet 
 empio on empo.id_objet = empio.id_objet ; 
-
 
 CREATE OR REPLACE VIEW v_emprunt_images_objet_categorie_membre AS 
 SELECT m.*, c.*,o.id_membre AS proprietaire,o.nom_objet,i.*,e.id_emprunt,e.id_membre AS empperso,e.date_emprunt,e.date_retour 

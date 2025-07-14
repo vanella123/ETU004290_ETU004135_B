@@ -19,3 +19,6 @@ Liste objet.php
 -liste de tout les objets id propriétaire , nom qui l ' a emprunté 'm , 
 Bouton emprunter l' objet si pas d'umprunt en cours  _+ traitement 
 Fonction insert into emprunt de avec date now  choisir un date de retour 
+
+- nombre total objet ok et abime (page) 
+- retourner l'objet emprunt voir l'etat de l'objet 

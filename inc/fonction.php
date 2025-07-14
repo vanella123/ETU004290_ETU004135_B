@@ -101,9 +101,10 @@
 
     function insertNewObj($nom_obj , $nom_categorie , $id)
     {
-        var_dump($nom_obj) ; 
+        /*var_dump($nom_obj) ; 
         var_dump($nom_categorie) ; 
         var_dump($id) ;
+        /** */
         $id_cate = get_idCategorie_byNom($nom_categorie);
         if (!$id_cate) return false;
         $conn = dbconnect();
@@ -175,6 +176,25 @@
         $remplacer=sprintf($sql,$id_objet, $id_membre, $date_emprunt, $date_retour); 
         $requete = mysqli_query(dbconnect(), $remplacer); 
         return $requete ; 
+    }
+    function get_objet($id)
+    {
+       $sql = "select * from emprunt_objet empo join emprunt_emprunt empu on 
+       empo.id_objet = empu.id_objet where empo.id_membre='$id'" ; 
+        $rep=mysqli_query(dbconnect(),$sql);
+        $tab = [] ;
+        while($row = mysqli_fetch_assoc($rep)) 
+        {
+            $tab[] = $row ;
+        }
+        return $tab;
+    }
+    function retour($id)
+    {
+        $sql = "delete from emprunt_objet where id_objet='$id'"; 
+        $request = mysqli_query(dbconnect() , $sql ) ; 
+       // $reponse = mysqli_fetch_assoc($request) ; 
+        return $request ;  
     }
 
     

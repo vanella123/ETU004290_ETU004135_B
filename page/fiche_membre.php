@@ -26,7 +26,6 @@ if (isset($_SESSION['mail'])) {
             margin: 0;
             padding: 20px;
         }
-
         h1 {
             text-align: center;
             color: #2c3e50;

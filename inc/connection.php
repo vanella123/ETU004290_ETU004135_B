@@ -4,8 +4,8 @@ function dbconnect()
     static $connect = null;
 
     if ($connect === null) {
-   $connect = mysqli_connect('localhost', 'ETU004135', 'j6I9DZ88', 'db_s2_ETU004135');
-  //  $connect = mysqli_connect('localhost', 'root', '', 'partage_objets');
+  $connect = mysqli_connect('localhost', 'ETU004135', 'j6I9DZ88', 'db_s2_ETU004135');
+  // $connect = mysqli_connect('localhost', 'root', '', 'partage_objets');
         if (!$connect) { 
             // Arrête le script et affiche une erreur si la connexion échoue
             die('Erreur de connexion à la base de données : ' . mysqli_connect_error());

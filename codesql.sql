@@ -31,6 +31,9 @@ CREATE TABLE emprunt_objet (
     id_membre INT,
     FOREIGN KEY (id_categorie) REFERENCES emprunt_categorie_objet(id_categorie),
     FOREIGN KEY (id_membre) REFERENCES emprunt_membre(id_membre)
+    ALTER TABLE emprunt_objet
+    ADD etat VARCHAR(100);
+
 );
 
 -- Table images_objet
