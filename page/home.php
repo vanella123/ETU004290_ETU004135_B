@@ -8,6 +8,7 @@ if (isset($_SESSION['mail'])) {
 }
 $infoemprunt = mesObjets($info['id_membre']);
 $_SESSION['liste_objet'] = $infoemprunt ; 
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -77,23 +78,26 @@ $_SESSION['liste_objet'] = $infoemprunt ;
         </nav>
     </header>
     <h2>Liste de mes emprunts</h2>
-
     <table>
         <tr>
             <th>Nom de l'objet</th>
+            <th>Image</th>
             <th>Catégorie</th>
             <th>Date emprunt</th>
             <th>Date retour</th>
         </tr>
         <?php foreach ($infoemprunt as $emprunt): ?>
+            <?php var_dump($image = getImagesByIdObjet($emprunt['id_objet']) )?>
             <tr>
-                <td><?= $emprunt['nom_objet'] ?></td>
-                <td><?= $emprunt['id_categorie'] ?></td>
+                <td><a href="traitement.php?id=<?= $emprunt['id_objet'] ?>"><?= $emprunt['nom_objet'] ?></a></td>                    
+                <td><img src="../assets/images/<?php echo $image[0]['nom_image'] ?>" /></td>
+                <td><?= $emprunt['nom_categorie'] ?></td>
                 <td><?= $emprunt['date_emprunt']?></td>
                 <td><?= $emprunt['date_retour'] ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
-
+    
+    <a href="formulaire_ajout.php?id=<?php echo $info['id_membre'] ?>">Ajouter objet </a>
 </body>
 </html>

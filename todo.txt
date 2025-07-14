@@ -1,6 +1,21 @@
-- Version 1 : 
-    - creer database
-    - creer base de donne 
-    - page : - login 
-            - inscription 
-            
+To do 
+- créer database : emprunt 
+- créer les différentes tables 
+- page : - inscription : 
+                     - fonction : 
+                                        - insertMembre
+            - login : 
+                - fonction : - - getInscrit 
+                                         - checkInscrit
+                                         - redirection : accueil.php
+           - lien liste objet :
+                - afficher : id , nom objet , date de retour si emprunt en cours
+ Liste mes objets 
+              - fonction : 
+GetListeobjet
+View objet et emprunt 
+
+Liste objet.php 
+-liste de tout les objets id propriétaire , nom qui l ' a emprunté 'm , 
+Bouton emprunter l' objet si pas d'umprunt en cours  _+ traitement 
+Fonction insert into emprunt de avec date now  choisir un date de retour 

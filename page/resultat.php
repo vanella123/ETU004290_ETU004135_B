@@ -1,6 +1,7 @@
 <?php 
     require('traitement.php');
-   $liste =  $_SESSION['objet'] ; 
+   $liste =  $_SESSION['objet'] ;
+   //var_dump($liste); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
